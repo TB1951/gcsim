@@ -25,7 +25,7 @@ type Weapon struct {
 func (w *Weapon) SetIndex(idx int) { w.Index = idx }
 func (w *Weapon) Init() error      { return nil }
 
-// Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by 8% and 
+// Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by 8% and
 // Charged Attack DMG will be increased by 6%. Max 3 stacks. This effect can be triggered once every 0.3s.
 func NewWeapon(c *core.Core, char *character.CharWrapper, p info.WeaponProfile) (info.Weapon, error) {
 	w := &Weapon{}
@@ -33,8 +33,8 @@ func NewWeapon(c *core.Core, char *character.CharWrapper, p info.WeaponProfile) 
 
 	m := make([]float64, attributes.EndStatType)
 
-	incNADmg = .08 + float64(r-1)*.02
-	incCADmg = .06 + float64(r-1)*0.015
+	incNADmg := .08 + float64(r-1)*.02
+	incCADmg := .06 + float64(r-1)*0.015
 
 	const buffKey = "boundless"
 
@@ -115,10 +115,3 @@ func NewWeapon(c *core.Core, char *character.CharWrapper, p info.WeaponProfile) 
 
 	return w, nil
 }
-
-
-
-config.yml
-package_name: balladoftheboundlessblue
-genshin_id: 14511
-key: balladoftheboundlessblue
